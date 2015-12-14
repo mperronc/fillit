@@ -6,7 +6,7 @@
 /*   By: mperronc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 16:08:24 by mperronc          #+#    #+#             */
-/*   Updated: 2015/12/14 11:01:53 by mperronc         ###   ########.fr       */
+/*   Updated: 2015/12/14 16:17:10 by dboudy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <sys/uio.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <fcntl.h>
 
 # define BUFF_SIZE 64
 
