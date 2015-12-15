@@ -6,7 +6,7 @@
 /*   By: mperronc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 07:51:25 by mperronc          #+#    #+#             */
-/*   Updated: 2015/12/15 07:57:07 by mperronc         ###   ########.fr       */
+/*   Updated: 2015/12/15 10:33:24 by dboudy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		can_place(char piece[4][4], char **board, int x, int y)
 		{
 			if (piece[i][j] != '.')
 			{
-				if (board[x+i][y+j] != '.')
+				if (board[x + i][y + j] != '.')
 					return (0);
 			}
 			j++;

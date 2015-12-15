@@ -6,14 +6,14 @@
 /*   By: mperronc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 01:09:50 by mperronc          #+#    #+#             */
-/*   Updated: 2015/12/14 11:09:48 by mperronc         ###   ########.fr       */
+/*   Updated: 2015/12/15 10:13:38 by dboudy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/fillit.h"
 #include "../../libft/libft.h"
 
-int		get_offset(char	*pattern)
+int		get_offset(char *pattern)
 {
 	int	i;
 

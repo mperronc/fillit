@@ -6,7 +6,7 @@
 /*   By: mperronc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 01:21:35 by mperronc          #+#    #+#             */
-/*   Updated: 2015/12/15 06:29:03 by mperronc         ###   ########.fr       */
+/*   Updated: 2015/12/15 10:36:21 by dboudy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 void		push_tetrimino_back(t_tetri **first, char *pattern)
 {
 	t_tetri	*tmp;
-	int pos;
-	
+	int		pos;
+
 	if (*first == NULL)
 		*first = new_tetrimino(pattern, 0);
 	else
