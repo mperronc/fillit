@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   new_tetrimino.c                                    :+:      :+:    :+:   */
+/*   list_len.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mperronc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/14 01:20:29 by mperronc          #+#    #+#             */
-/*   Updated: 2015/12/15 06:28:37 by mperronc         ###   ########.fr       */
+/*   Created: 2015/12/15 07:57:23 by mperronc          #+#    #+#             */
+/*   Updated: 2015/12/15 08:00:44 by mperronc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/fillit.h"
 #include "../../libft/libft.h"
 
-t_tetri		*new_tetrimino(char *pattern, int pos)
+int		list_len(t_tetri *first)
 {
-	t_tetri		*new_tetri;
-	int			i;
-	int			j;
+	int i;
+	t_tetri	*tmp;
 
-	new_tetri = (t_tetri *)malloc(sizeof(t_tetri));
-	if (new_tetri == NULL)
-		return (NULL);
-	i = 0;
-	while (i < 4)
+	tmp = first;
+	while (tmp)
 	{
-		j = 0;
-		while (pattern[j < 4])
-		{
-			new_tetri->pattern[i][j] = pattern[i * 4 + j];
-			j++;
-		}
+		tmp = tmp->next;
 		i++;
 	}
-	new_tetri->size_x = j;
-	new_tetri->size_y = i;
-	new_tetri->pos = pos;
-	new_tetri->next = NULL;
-	return (new_tetri);
+	return (i);
 }

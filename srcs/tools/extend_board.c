@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   new_tetrimino.c                                    :+:      :+:    :+:   */
+/*   extend_board.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mperronc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/14 01:20:29 by mperronc          #+#    #+#             */
-/*   Updated: 2015/12/15 06:28:37 by mperronc         ###   ########.fr       */
+/*   Created: 2015/12/15 08:29:00 by mperronc          #+#    #+#             */
+/*   Updated: 2015/12/15 08:34:59 by mperronc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/fillit.h"
 #include "../../libft/libft.h"
 
-t_tetri		*new_tetrimino(char *pattern, int pos)
+char	**extend_board(char **board, int board_newsize)
 {
-	t_tetri		*new_tetri;
-	int			i;
-	int			j;
+	char	**new_board;
+	int i;
 
-	new_tetri = (t_tetri *)malloc(sizeof(t_tetri));
-	if (new_tetri == NULL)
-		return (NULL);
+	free(board);
+	new_board = (char **)malloc(sizeof(char *) * (board_newsize+4));
 	i = 0;
-	while (i < 4)
+	while (i < board_newsize+4)
 	{
-		j = 0;
-		while (pattern[j < 4])
-		{
-			new_tetri->pattern[i][j] = pattern[i * 4 + j];
-			j++;
-		}
+		new_board[i] = (char *)malloc(sizeof(char) * (board_newsize+4));
 		i++;
 	}
-	new_tetri->size_x = j;
-	new_tetri->size_y = i;
-	new_tetri->pos = pos;
-	new_tetri->next = NULL;
-	return (new_tetri);
+	new_board[i] = 0;
+	return (new_board);
 }

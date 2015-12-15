@@ -6,14 +6,14 @@
 /*   By: mperronc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 01:21:35 by mperronc          #+#    #+#             */
-/*   Updated: 2015/12/14 11:09:48 by mperronc         ###   ########.fr       */
+/*   Updated: 2015/12/15 06:29:03 by mperronc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/fillit.h"
 #include "../../libft/libft.h"
 
-void		push_tetrimino_back(t_tetri **first, char **pattern)
+void		push_tetrimino_back(t_tetri **first, char *pattern)
 {
 	t_tetri	*tmp;
 	int pos;

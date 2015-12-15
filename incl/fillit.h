@@ -6,7 +6,7 @@
 /*   By: mperronc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 16:08:24 by mperronc          #+#    #+#             */
-/*   Updated: 2015/12/14 16:17:10 by dboudy           ###   ########.fr       */
+/*   Updated: 2015/12/15 06:30:21 by mperronc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct		s_tetri
 }					t_tetri;
 
 int		get_next_line(int const fd, char **line);
-int		is_pattern_valid(char **pattern);
+int		is_pattern_valid(char *pattern);
 char	*twoD_to_oneD(char **pattern);
 int		get_offset(char *pattern);
 int		is_pattern_valid_dotsharp(char *pattern);
@@ -42,7 +42,7 @@ int		is_pattern_valid_J(char *pattern, int offset);
 int		is_pattern_valid_T(char *pattern, int offset);
 int		is_pattern_valid_S(char *pattern, int offset);
 int		is_pattern_valid_Z(char *pattern, int offset);
-void	push_tetrimino_back(t_tetri **first, char **pattern);
-t_tetri		*new_tetrimino(char **pattern, int pos);
+void	push_tetrimino_back(t_tetri **first, char *pattern);
+t_tetri		*new_tetrimino(char *pattern, int pos);
 
 #endif

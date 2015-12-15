@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   new_tetrimino.c                                    :+:      :+:    :+:   */
+/*   solve_me.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mperronc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/14 01:20:29 by mperronc          #+#    #+#             */
-/*   Updated: 2015/12/15 06:28:37 by mperronc         ###   ########.fr       */
+/*   Created: 2015/12/15 08:01:04 by mperronc          #+#    #+#             */
+/*   Updated: 2015/12/15 08:21:10 by mperronc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/fillit.h"
 #include "../../libft/libft.h"
 
-t_tetri		*new_tetrimino(char *pattern, int pos)
-{
-	t_tetri		*new_tetri;
-	int			i;
-	int			j;
+/*Assuming all the pieces are parsed correctly */
 
-	new_tetri = (t_tetri *)malloc(sizeof(t_tetri));
-	if (new_tetri == NULL)
-		return (NULL);
+char	**solve_me(t_tetri *piece, char **board, int board_size)
+{
+	int	i;
+	int j;
+	
+	if (piece == NULL)
+		return (board);
 	i = 0;
-	while (i < 4)
+	while (i < board_size)
 	{
 		j = 0;
-		while (pattern[j < 4])
+		while (j < board_size)
 		{
-			new_tetri->pattern[i][j] = pattern[i * 4 + j];
+			if (can_place(piece->pattern, board, i, j))
+				solve_me(piece->next, board, board_size);
 			j++;
 		}
 		i++;
 	}
-	new_tetri->size_x = j;
-	new_tetri->size_y = i;
-	new_tetri->pos = pos;
-	new_tetri->next = NULL;
-	return (new_tetri);
+	return (NULL);
 }

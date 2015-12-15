@@ -1,41 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   new_tetrimino.c                                    :+:      :+:    :+:   */
+/*   can_place.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mperronc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/14 01:20:29 by mperronc          #+#    #+#             */
-/*   Updated: 2015/12/15 06:28:37 by mperronc         ###   ########.fr       */
+/*   Created: 2015/12/15 07:51:25 by mperronc          #+#    #+#             */
+/*   Updated: 2015/12/15 07:57:07 by mperronc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incl/fillit.h"
-#include "../../libft/libft.h"
-
-t_tetri		*new_tetrimino(char *pattern, int pos)
+int		can_place(char piece[4][4], char **board, int x, int y)
 {
-	t_tetri		*new_tetri;
-	int			i;
-	int			j;
+	int i;
+	int j;
 
-	new_tetri = (t_tetri *)malloc(sizeof(t_tetri));
-	if (new_tetri == NULL)
-		return (NULL);
 	i = 0;
 	while (i < 4)
 	{
 		j = 0;
-		while (pattern[j < 4])
+		while (j < 4)
 		{
-			new_tetri->pattern[i][j] = pattern[i * 4 + j];
+			if (piece[i][j] != '.')
+			{
+				if (board[x+i][y+j] != '.')
+					return (0);
+			}
 			j++;
 		}
 		i++;
 	}
-	new_tetri->size_x = j;
-	new_tetri->size_y = i;
-	new_tetri->pos = pos;
-	new_tetri->next = NULL;
-	return (new_tetri);
+	return (1);
 }
