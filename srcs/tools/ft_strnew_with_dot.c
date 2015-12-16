@@ -6,9 +6,21 @@
 /*   By: dboudy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 13:07:07 by dboudy            #+#    #+#             */
-/*   Updated: 2015/12/16 13:09:55 by dboudy           ###   ########.fr       */
+/*   Updated: 2015/12/16 13:37:58 by dboudy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-new_board = (char **)malloc(sizeof(char *) * (board_newsize + 4));
-new_board[board_newsize + 4] = '\0';
+char	*ft_strnew_with_dot(char *new_boardline, int size)
+{
+	int		i;
+
+	i = 0;
+	new_boardline[i] = (char *)malloc(sizeof(char) * (size + 4));
+	while (i < size + 4)
+	{
+		newboardline[i] = '.';
+		i++;
+	}
+	new_boardline[i] = 0;
+	return (new_boardline);
+}
