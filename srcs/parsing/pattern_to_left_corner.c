@@ -6,13 +6,12 @@
 /*   By: mperronc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 06:32:43 by mperronc          #+#    #+#             */
-/*   Updated: 2015/12/15 10:30:51 by dboudy           ###   ########.fr       */
+/*   Updated: 2015/12/15 15:04:43 by dboudy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/fillit.h"
 #include "../../libft/libft.h"
-#include <stdio.h>
 
 static	void	up(char *pattern)
 {

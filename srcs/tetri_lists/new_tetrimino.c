@@ -6,7 +6,7 @@
 /*   By: mperronc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 01:20:29 by mperronc          #+#    #+#             */
-/*   Updated: 2015/12/15 06:28:37 by mperronc         ###   ########.fr       */
+/*   Updated: 2015/12/16 11:37:04 by dboudy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ t_tetri		*new_tetrimino(char *pattern, int pos)
 	new_tetri->size_y = i;
 	new_tetri->pos = pos;
 	new_tetri->next = NULL;
+	turn_into_alphachar(new_tetri->pattern, pos);
 	return (new_tetri);
 }

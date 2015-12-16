@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twoD_to_oneD.c                                     :+:      :+:    :+:   */
+/*   fillit.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mperronc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dboudy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/14 01:14:32 by mperronc          #+#    #+#             */
-/*   Updated: 2015/12/14 11:09:48 by mperronc         ###   ########.fr       */
+/*   Created: 2015/12/16 10:31:05 by dboudy            #+#    #+#             */
+/*   Updated: 2015/12/16 13:09:57 by dboudy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/fillit.h"
 #include "../../libft/libft.h"
 
-char	*twoD_to_oneD(char **pattern)
+int		main(int ac, char **av)
 {
-	char	*oneD_pattern;
-	int i;
-	int j;
-	int n;
+	t_tetri *first;
 
-	oneD_pattern = (char *)malloc(sizeof(char) * 17);
-	i = 0;
-	n = 0;
-	while (i < 4)
+	if (ac != 2 || first = ft_read_file(av[1]) == NULL)
+		ft_putstr("error\n");
+		return (0);
+	fnt qui compte lst;
+
+	while (solve_me == NULL)
 	{
-		j = 0;
-		while (j < 4)
-		{
-			oneD_pattern[n] = pattern[i][j];
-			n++;
-			j++;
-		}
-		i++;
-	}
-	return (oneD_pattern);
+		extand_board(
+	}	
+	return (0);
 }

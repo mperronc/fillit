@@ -6,7 +6,7 @@
 /*   By: mperronc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 16:08:24 by mperronc          #+#    #+#             */
-/*   Updated: 2015/12/15 10:40:53 by dboudy           ###   ########.fr       */
+/*   Updated: 2015/12/16 12:39:34 by dboudy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,10 @@ typedef struct		s_tetri
 	struct s_tetri	*next;
 }					t_tetri;
 
-int					get_next_line(int const fd, char **line);
+t_tetri				**ft_read_file(int fd);
+//int					get_next_line(int const fd, char **line);
 int					is_pattern_valid(char *pattern);
-char				*twod_to_oned(char **pattern);
+//char				*twod_to_oned(char **pattern);
 int					get_offset(char *pattern);
 int					is_pattern_valid_dotsharp(char *pattern);
 int					is_pattern_valid_o(char *pattern, int offset);
