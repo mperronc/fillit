@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   solve_me.c                                         :+:      :+:    :+:   */
+/*   put_tetri.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mperronc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/15 08:01:04 by mperronc          #+#    #+#             */
-/*   Updated: 2015/12/16 13:24:56 by mperronc         ###   ########.fr       */
+/*   Created: 2015/12/16 13:19:52 by mperronc          #+#    #+#             */
+/*   Updated: 2015/12/16 13:22:48 by mperronc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incl/fillit.h"
-#include "../../libft/libft.h"
-
-/*Assuming all the pieces are parsed correctly*/
-
-char	**solve_me(t_tetri *piece, char **board, int board_size)
+char	**put_tetri(char **board, char pattern[4][4], int x, int y)
 {
-	int	i;
+	int i;
 	int j;
 
-	if (piece == NULL)
-		return (board);
 	i = 0;
-	while (i < board_size)
+	while (i < 4)
 	{
 		j = 0;
-		while (j < board_size)
+		while (j < 4)
 		{
-			if (can_place(piece->pattern, board, i, j))
-				board = put_tetri(board, piece->pattern, i, j);
-			solve_me(piece->next, board, board_size);
+			board[x + i][y + j] = pattern[i][i];
 			j++;
 		}
 		i++;
 	}
-	return (NULL);
+	return (board);
 }

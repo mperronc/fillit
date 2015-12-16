@@ -6,12 +6,12 @@
 /*   By: dboudy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 10:31:05 by dboudy            #+#    #+#             */
-/*   Updated: 2015/12/16 13:09:57 by dboudy           ###   ########.fr       */
+/*   Updated: 2015/12/16 13:19:25 by mperronc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incl/fillit.h"
-#include "../../libft/libft.h"
+#include "../incl/fillit.h"
+#include "../libft/libft.h"
 
 int		main(int ac, char **av)
 {
