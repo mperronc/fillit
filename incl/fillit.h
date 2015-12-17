@@ -6,7 +6,7 @@
 /*   By: mperronc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 16:08:24 by mperronc          #+#    #+#             */
-/*   Updated: 2015/12/16 14:26:00 by mperronc         ###   ########.fr       */
+/*   Updated: 2015/12/17 16:08:52 by mperronc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
+# include <stdio.h>
 
 # define BUFF_SIZE 64
 
@@ -48,7 +49,7 @@ void				turn_into_alphachar(char (*pattern)[4][4], int pos);
 char				*pattern_to_left_corner(char *pattern);
 int					can_place(char piece[4][4], char **board, int x, int y);
 char				**put_tetri(char **board, char pattern[4][4], int x, int y);
-char				**solve_me(t_tetri *piece, char **board, int board_size);
+char				**solve_me(t_tetri **piece, char **board, int board_size);
 char				**extend_board(char **board, int board_newsize);
 char				*ft_strnew_with_dot(char *new_boardline, int size);
 void				ft_strnout(char *dest, char *src);
