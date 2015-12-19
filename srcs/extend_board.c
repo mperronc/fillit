@@ -6,7 +6,7 @@
 /*   By: mperronc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 08:29:00 by mperronc          #+#    #+#             */
-/*   Updated: 2015/12/17 14:03:56 by mperronc         ###   ########.fr       */
+/*   Updated: 2015/12/19 15:32:45 by mperronc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ char	**extend_board(char **board, int board_newsize)
 
 	if (board)
 	{
-		printf("Freeing old board... ");
 		free(board);
-		printf(" done.\n");
 	}
 	new_board = (char **)malloc(sizeof(char *) * (board_newsize + 4));
 	i = 0;

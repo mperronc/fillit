@@ -1,40 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   erase_piece.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mperronc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/09 18:11:42 by mperronc          #+#    #+#             */
-/*   Updated: 2015/12/16 14:48:13 by mperronc         ###   ########.fr       */
+/*   Created: 2015/12/19 14:17:33 by mperronc          #+#    #+#             */
+/*   Updated: 2015/12/19 16:00:32 by mperronc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
 #include "../incl/fillit.h"
+#include "../libft/libft.h"
 
-int		get_next_line(int const fd, char **line)
+void	erase_piece(char **board, int board_size, int pos)
 {
-	char			*buf;
-	int				i;
-	int				r;
-	char			c;
+	int		i;
+	int		j;
+	char	c;
 
-	buf = (char *)malloc(sizeof(char) * BUFF_SIZE);
+	c = 'A' + pos;
 	i = 0;
-	c = 0;
-	r = 1;
-	while (c != 10 && r > 0)
+	while (i < board_size)
 	{
-		r = read(fd, &c, 1);
-		if (c != 10)
+		j = 0;
+		while (j < board_size)
 		{
-			buf[i] = c;
-			i++;
+			if (board[i][j] == c)
+				board[i][j] = '.';
+			j++;
 		}
+		i++;
 	}
-	buf[i] = 0;
-	*line = ft_strdup(buf);
-	free(buf);
-	return (r);
 }

@@ -6,7 +6,7 @@
 /*   By: mperronc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 08:01:04 by mperronc          #+#    #+#             */
-/*   Updated: 2015/12/17 17:10:42 by mperronc         ###   ########.fr       */
+/*   Updated: 2015/12/19 16:06:55 by mperronc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,9 @@
 
 char	**solve_me(t_tetri **piece, char **board, int board_size)
 {
-	static int solved = 0;
-	int	i;
-	int j;
-
-	printf("Board size is %d\n", board_size);
-	printf("Adress of piece is :%p\n\n", *piece);
+	static int	solved = 0;
+	int			i;
+	int			j;
 
 	i = 0;
 	while (i < board_size && solved == 0)
@@ -28,10 +25,8 @@ char	**solve_me(t_tetri **piece, char **board, int board_size)
 		j = 0;
 		while (j < board_size && solved == 0)
 		{
-			printf("Trying piece %d at pos %d,%d\n", (*piece)->pos, i, j);
-			if (can_place((*piece)->pattern, board, i, j))
+			if (can_place((*piece)->pattern, board, i, j, board_size))
 			{
-				printf("%d,%d is free\n\n", i, j);
 				board = put_tetri(board, (*piece)->pattern, i, j);
 				if ((*piece)->next == NULL)
 					solved = 1;
@@ -42,5 +37,9 @@ char	**solve_me(t_tetri **piece, char **board, int board_size)
 		}
 		i++;
 	}
+	if (solved == 0)
+		erase_piece(board, board_size, (*piece)->pos - 1);
+	if (solved == 0 && (*piece)->pos == 0)
+		return (NULL);
 	return (board);
 }

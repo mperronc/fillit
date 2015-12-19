@@ -6,14 +6,14 @@
 /*   By: mperronc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 07:51:25 by mperronc          #+#    #+#             */
-/*   Updated: 2015/12/16 20:31:47 by mperronc         ###   ########.fr       */
+/*   Updated: 2015/12/19 13:54:05 by mperronc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/fillit.h"
 #include "../libft/libft.h"
 
-int		can_place(char piece[4][4], char **board, int x, int y)
+int		can_place(char piece[4][4], char **board, int y, int x, int board_size)
 {
 	int i;
 	int j;
@@ -26,7 +26,9 @@ int		can_place(char piece[4][4], char **board, int x, int y)
 		{
 			if (piece[i][j] != '.')
 			{
-				if (board[x + i][y + j] != '.')
+				if (board[i + y][x + j] != '.' ||
+					i + y >= board_size ||
+					x + j >= board_size)
 					return (0);
 			}
 			j++;

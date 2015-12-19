@@ -1,39 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_pattern_valid_o.c                               :+:      :+:    :+:   */
+/*   print_board.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mperronc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/14 01:11:22 by mperronc          #+#    #+#             */
-/*   Updated: 2015/12/16 14:53:25 by mperronc         ###   ########.fr       */
+/*   Created: 2015/12/19 14:01:57 by mperronc          #+#    #+#             */
+/*   Updated: 2015/12/19 15:33:37 by mperronc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/fillit.h"
 #include "../libft/libft.h"
+#include "../incl/fillit.h"
 
-int		is_pattern_valid_o(char *pattern, int offset)
+void	print_board(char **board, int board_size)
 {
 	int i;
+	int j;
 
 	i = 0;
-	if (offset > 10 || (offset+1) % 4 == 0)
-		return (0);
-	while (i < offset)
+	while (i < board_size)
 	{
-		if (pattern[i] != '.')
-			return (0);
+		j = 0;
+		while (j < board_size)
+		{
+			ft_putchar(board[i][j]);
+			j++;
+		}
+		ft_putchar('\n');
 		i++;
 	}
-	if (ft_strncmp(pattern + offset, "##..##", 6) != 0)
-		return (0);
-	i = offset + 6;
-	while (i < 16)
-	{
-		if (pattern[i] != '.')
-			return (0);
-		i++;
-	}
-	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: dboudy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 10:31:05 by dboudy            #+#    #+#             */
-/*   Updated: 2015/12/17 17:00:35 by mperronc         ###   ########.fr       */
+/*   Updated: 2015/12/19 16:05:25 by mperronc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,40 +19,23 @@ int		main(int ac, char **av)
 	char	**board;
 	int		board_size;
 
-	printf("Entering fillit...\n");
-
 	if (ac != 2)
 	{
-		ft_putstr("Invalid number of arguments\n");
+		ft_putstr("error\n");
 		return (0);
 	}
-
 	first = (t_tetri **)malloc(sizeof(t_tetri *) * 26);
 	*first = NULL;
 	first = ft_read_file(av[1], first);
-
 	if (first == NULL)
 	{
-		printf("The file appears to be invalid\n");
+		ft_putstr("error\n");
 		return (0);
 	}
-
 	board_size = get_board_size(list_len(*first));
-	printf("There is %d pieces in the list\n", list_len(*first));
-
-	printf("Allocating the board ... ");
 	board = extend_board(NULL, board_size);
-	printf("done.\n\n");
-
-	printf("Starting resolution algorithm...\n\n");
-	while(solve_me(first, board, board_size) == NULL && board_size < 4)
+	while (solve_me(first, board, board_size) == NULL)
 		board = extend_board(board, ++board_size);
-
-	int i = 0;
-	while (board[i])
-	{
-		ft_putstr(board[i++]);
-		ft_putchar('\n');
-	}
+	print_board(board, board_size);
 	return (0);
 }
