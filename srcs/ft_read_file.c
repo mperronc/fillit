@@ -6,7 +6,7 @@
 /*   By: dboudy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/13 14:48:11 by dboudy            #+#    #+#             */
-/*   Updated: 2015/12/19 16:02:01 by mperronc         ###   ########.fr       */
+/*   Updated: 2015/12/21 11:25:44 by dboudy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ t_tetri	**ft_read_file(char *file_to_open, t_tetri **first)
 		ret = read(fd, tmp, 21);
 		if (ret > 0)
 		{
-			tmp[20] = '\0';
 			if (check_symbols(tmp) == 0)
 				return (NULL);
 			ft_strnout(pattern, tmp);
