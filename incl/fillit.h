@@ -6,7 +6,7 @@
 /*   By: mperronc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 16:08:24 by mperronc          #+#    #+#             */
-/*   Updated: 2015/12/19 14:17:03 by mperronc         ###   ########.fr       */
+/*   Updated: 2016/01/04 09:27:59 by dboudy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ typedef struct		s_tetri
 
 t_tetri				**ft_read_file(char *file_to_open, t_tetri **first);
 int					check_symbols(char *pattern);
-int					check_link(char *pattern, int i, int nb_appel);
 int					get_offset(char *pattern);
 void				push_tetrimino_back(t_tetri **first, char *pattern);
 t_tetri				*new_tetrimino(char *pattern, int pos);
