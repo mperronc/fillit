@@ -6,28 +6,29 @@
 /*   By: dboudy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 16:37:27 by dboudy            #+#    #+#             */
-/*   Updated: 2016/01/04 10:11:47 by dboudy           ###   ########.fr       */
+/*   Updated: 2016/01/06 18:55:02 by mperronc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/fillit.h"
 #include "../libft/libft.h"
 
-void	ft_strnout(char *dest, char *src)
+char	*ft_strnout(char *src)
 {
 	int		i;
-	int		i2;
+	char	*ret;
 
+	ret = (char *)malloc(sizeof(char) * 17);
 	i = 0;
-	i2 = 0;
-	while (src[i])
+	while (*src)
 	{
-		if (src[i] != '\n')
+		if (*src != '\n')
 		{
-			dest[i2] = src[i];
-			i2++;
+			ret[i] = *src;
+			i++;
 		}
-		i++;
+		src++;
 	}
-	dest[i2] = '\0';
+	ret[i] = 0;
+	return (ret);
 }
