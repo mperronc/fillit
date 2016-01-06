@@ -6,18 +6,25 @@
 /*   By: dboudy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 10:31:05 by dboudy            #+#    #+#             */
-/*   Updated: 2016/01/06 18:45:41 by mperronc         ###   ########.fr       */
+/*   Updated: 2016/01/06 20:40:20 by mperronc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/fillit.h"
 #include "../libft/libft.h"
 
-int		main(int ac, char **av)
+static t_board	*init_board(t_tetri *first, t_board *board)
+{
+	board = (t_board *)malloc(sizeof(t_board));
+	board->size = get_board_size(list_len(first));
+	board->grid = extend_board(NULL, board->size);
+	return (board);
+}
+
+int				main(int ac, char **av)
 {
 	t_tetri	**first;
-	char	**board;
-	int		board_size;
+	t_board	*board;
 
 	if (ac != 2)
 	{
@@ -32,11 +39,13 @@ int		main(int ac, char **av)
 		ft_putstr("error\n");
 		return (0);
 	}
-	print_list(*first);
-	board_size = get_board_size(list_len(*first));
-	board = extend_board(NULL, board_size);
-	while (solve_me(first, board, board_size) == NULL)
-		board = extend_board(board, ++board_size);
-	print_board(board, board_size);
-	return (0);
+	board = NULL;
+	board = init_board(*first, board);
+	while (solve_me(first, board) == NULL)
+	{
+		board->size += 1;
+		board->grid = extend_board(board->grid, board->size);
+	}
+	print_board(board->grid, board->size);
+	exit(0);
 }
