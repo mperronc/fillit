@@ -6,7 +6,7 @@
 /*   By: dboudy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 10:31:05 by dboudy            #+#    #+#             */
-/*   Updated: 2015/12/19 16:05:25 by mperronc         ###   ########.fr       */
+/*   Updated: 2016/01/06 17:30:00 by mperronc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,15 @@ int		main(int ac, char **av)
 		ft_putstr("error\n");
 		return (0);
 	}
+	print_list(*first);
 	board_size = get_board_size(list_len(*first));
+	printf("%d", board_size);
 	board = extend_board(NULL, board_size);
 	while (solve_me(first, board, board_size) == NULL)
+	{
 		board = extend_board(board, ++board_size);
+		printf("%d", board_size);
+	}
 	print_board(board, board_size);
 	return (0);
 }

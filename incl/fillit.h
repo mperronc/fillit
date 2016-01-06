@@ -6,7 +6,7 @@
 /*   By: mperronc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 16:08:24 by mperronc          #+#    #+#             */
-/*   Updated: 2016/01/06 12:41:00 by dboudy           ###   ########.fr       */
+/*   Updated: 2016/01/06 17:29:16 by mperronc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,6 @@ int					list_len(t_tetri *first);
 void				print_board(char **board, int board_size);
 void				erase_piece(char **board, int board_size, int pos);
 void				free_board(char **board, int board_size);
+void				print_list(t_tetri *p);
 
 #endif

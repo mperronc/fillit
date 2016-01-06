@@ -6,7 +6,7 @@
 /*   By: mperronc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 08:29:00 by mperronc          #+#    #+#             */
-/*   Updated: 2016/01/06 12:58:05 by dboudy           ###   ########.fr       */
+/*   Updated: 2016/01/06 17:42:30 by mperronc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	**extend_board(char **board, int board_newsize)
 	}
 	new_board = (char **)malloc(sizeof(char *) * (board_newsize + 5));
 	i = 0;
-	while (i < (board_newsize + 5))
+	while (i < (board_newsize + 4))
 	{
 		new_board[i] = ft_strnew_with_dot(board_newsize);
 		i++;

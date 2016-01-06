@@ -6,7 +6,7 @@
 #    By: mperronc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/02 12:07:00 by mperronc          #+#    #+#              #
-#    Updated: 2016/01/06 12:14:41 by dboudy           ###   ########.fr        #
+#    Updated: 2016/01/06 17:46:51 by mperronc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,6 @@ SRC_NAME = can_place.c \
 		   ft_strnew_with_dot.c \
 		   ft_strnout.c \
 		   get_board_size.c \
-		   get_offset.c \
 		   list_len.c \
 		   new_tetrimino.c \
 		   pattern_to_left_corner.c \
@@ -32,7 +31,8 @@ SRC_NAME = can_place.c \
 		   put_tetri.c \
 		   solve_me.c \
 		   turn_into_alphachar.c \
-		   free_board.c
+		   free_board.c \
+		   print_list.c
 
 OBJ_PATH = ./obj/
 

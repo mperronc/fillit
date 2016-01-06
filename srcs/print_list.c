@@ -1,24 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_offset.c                                       :+:      :+:    :+:   */
+/*   print_list.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mperronc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/14 01:09:50 by mperronc          #+#    #+#             */
-/*   Updated: 2015/12/16 14:48:13 by mperronc         ###   ########.fr       */
+/*   Created: 2016/01/06 17:21:03 by mperronc          #+#    #+#             */
+/*   Updated: 2016/01/06 17:28:38 by mperronc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/fillit.h"
 #include "../libft/libft.h"
 
-int		get_offset(char *pattern)
+void	print_list(t_tetri *first)
 {
-	int	i;
+	int i;
+	int j;
 
-	i = 0;
-	while (pattern[i] == '.')
-		i++;
-	return (i);
+	while (first)
+	{
+		i = 0;
+		ft_putstr("Piece no. ");
+		ft_putnbr(first->pos);
+		ft_putchar('\n');
+		while (i < 4)
+		{
+			j = 0;
+			while (j < 4)
+			{
+				ft_putchar(first->pattern[i][j]);
+				j++;
+			}
+			ft_putchar('\n');
+			i++;
+		}
+		ft_putchar('\n');
+		first = first->next;
+	}
 }
