@@ -6,7 +6,7 @@
 /*   By: mperronc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 16:08:24 by mperronc          #+#    #+#             */
-/*   Updated: 2016/01/04 09:27:59 by dboudy           ###   ########.fr       */
+/*   Updated: 2016/01/06 12:41:00 by dboudy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,12 @@ int					can_place(char piece[4][4], char **board, int x, int y, int board_size);
 char				**put_tetri(char **board, char pattern[4][4], int x, int y);
 char				**solve_me(t_tetri **piece, char **board, int board_size);
 char				**extend_board(char **board, int board_newsize);
-char				*ft_strnew_with_dot(char *new_boardline, int size);
+char				*ft_strnew_with_dot(int size);
 void				ft_strnout(char *dest, char *src);
 int					get_board_size(int n_pieces);
 int					list_len(t_tetri *first);
 void				print_board(char **board, int board_size);
 void				erase_piece(char **board, int board_size, int pos);
+void				free_board(char **board, int board_size);
 
 #endif

@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew_with_dot.c                               :+:      :+:    :+:   */
+/*   free_board.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dboudy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/16 13:07:07 by dboudy            #+#    #+#             */
-/*   Updated: 2016/01/06 13:04:50 by dboudy           ###   ########.fr       */
+/*   Created: 2016/01/06 12:11:08 by dboudy            #+#    #+#             */
+/*   Updated: 2016/01/06 13:04:57 by dboudy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/fillit.h"
 #include "../libft/libft.h"
 
-char	*ft_strnew_with_dot(int size)
+void	free_board(char **board, int board_size)
 {
 	int		i;
-	char *new_line;
 
 	i = 0;
-	new_line = (char *)malloc(sizeof(char) * (size + 5));
-	while (i < size + 4)
+	while (i < board_size + 4)
 	{
-		new_line[i] = '.';
+		free(board[i]);
+		board[i] = NULL;
 		i++;
 	}
-	new_line[i] = 0;
-	return (new_line);
+	free(board[i]);
+	board[i] = NULL;
+	free(board);
+	board = NULL;
 }

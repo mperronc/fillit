@@ -6,7 +6,7 @@
 #    By: mperronc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/02 12:07:00 by mperronc          #+#    #+#              #
-#    Updated: 2015/12/19 14:22:14 by mperronc         ###   ########.fr        #
+#    Updated: 2016/01/06 12:14:41 by dboudy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,8 @@ SRC_NAME = can_place.c \
 		   push_tetrimino_back.c \
 		   put_tetri.c \
 		   solve_me.c \
-		   turn_into_alphachar.c
+		   turn_into_alphachar.c \
+		   free_board.c
 
 OBJ_PATH = ./obj/
 
