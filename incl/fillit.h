@@ -6,7 +6,7 @@
 /*   By: mperronc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 16:08:24 by mperronc          #+#    #+#             */
-/*   Updated: 2016/01/06 19:13:26 by mperronc         ###   ########.fr       */
+/*   Updated: 2016/01/07 17:00:12 by mperronc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
-# include <stdio.h>
 
 typedef struct		s_tetri
 {
@@ -34,7 +33,7 @@ typedef struct		s_board
 }					t_board;
 
 t_tetri				**ft_read_file(char *file_to_open, t_tetri **first);
-int					check_symbols(char *pattern);
+int					check_symbols(char *pattern, int first);
 int					get_offset(char *pattern);
 void				push_tetrimino_back(t_tetri **first, char *pattern);
 t_tetri				*new_tetrimino(char *pattern, int pos);

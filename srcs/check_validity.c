@@ -6,27 +6,30 @@
 /*   By: dboudy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/18 11:02:07 by dboudy            #+#    #+#             */
-/*   Updated: 2016/01/06 19:45:44 by mperronc         ###   ########.fr       */
+/*   Updated: 2016/01/07 17:15:27 by mperronc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/fillit.h"
 #include "../libft/libft.h"
 
-static int	check_place_of_n(char *pattern)
+static int	check_place_of_n(char *pattern, int first)
 {
 	int i;
 
 	i = 0;
-	if (pattern[20] == '\n' || pattern[20] == '\0')
-		pattern[20] = '\0';
-	else
-		return (5);
+	if (!first)
+	{
+		if (pattern[0] != '\n')
+			return (99);
+		i++;
+	}
 	while (pattern[i])
 	{
 		if (pattern[i] == '\n')
-			if (i != 4 && i != 9 && i != 14 && i != 19)
-				return (5);
+			if (i != (5 - first) && i != (10 - first) &&
+				i != (15 - first) && i != (20 - first))
+				return (99);
 		i++;
 	}
 	return (0);
@@ -57,7 +60,7 @@ static int	check_link(char *pattern)
 	return (link);
 }
 
-int			check_symbols(char *pattern)
+int			check_symbols(char *pattern, int first)
 {
 	int		n;
 	int		pt;
@@ -66,7 +69,7 @@ int			check_symbols(char *pattern)
 
 	pt = 0;
 	d = 0;
-	n = check_place_of_n(pattern);
+	n = check_place_of_n(pattern, first);
 	link = check_link(pattern);
 	while (pattern[n + pt + d])
 	{
@@ -79,7 +82,7 @@ int			check_symbols(char *pattern)
 		else
 			return (0);
 	}
-	if (n == 4 && d == 4 && pt == 12 && link >= 6)
+	if (n == 5 - first && d == 4 && pt == 12 && link >= 6)
 		return (1);
 	return (0);
 }
